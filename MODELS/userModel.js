@@ -6,7 +6,7 @@ const mongoose  = require("mongoose");
          password:{type:String},
          age:{type:Number},
          address:{type:String},
-         City :{type: String}
+         city :{type: String}
   })
   const userMOdel =  mongoose.model("z_users", UserSchema)
   module.exports = userMOdel

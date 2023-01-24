@@ -11,7 +11,6 @@ app.use(express.json())
  app.use(express.text())
 const PORT = process.env.PORT || 8500;
 app.use(urlencoded({extended:true}))
- 
 
 
         app.get('/', (req, res)=>{
@@ -34,17 +33,16 @@ app.use(urlencoded({extended:true}))
                     if(err){
                         res.status(500).send({message:'oops something went wrong plz try again'})
                     }
-
                     res.status(200).send({message : "sign up sucessful"})
             })
         })
         app.listen(PORT, async ()=>{
             try{
-            await connection;
-            console.log("conneted to data base")
+              await connection;
+              console.log("conneted to data base");
+              console.log(`Suvcessfully Runnig On ${PORT}`)
             }catch(err){
                 console.log("connetion data base error")
                 console.log(err)
                 } 
-            console.log(`Suvcessfully Runnig On ${PORT}`)
         })
